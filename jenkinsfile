@@ -16,6 +16,7 @@ pipeline {
           gitCommitHash = sh(returnStdout: true, script: 'git rev-parse HEAD').trim()
           shortGitCommitHash = gitCommitHash.take(7)
           IMAGE = "$PROJECT:$shortGitCommitHash"
+        }
       }
     }
     stage ('build') {
