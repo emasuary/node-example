@@ -29,7 +29,7 @@ pipeline {
     stage ('publish') {
       steps {
         script {
-          docker.withRegistry("https://registry.hub.docker.com", "dockerhub") {
+          docker.withRegistry("https://registry.hub.docker.com", "eitandocker") {
             docker.image("$IMAGE").push()
           }
         }
